@@ -26,6 +26,7 @@
 	<p id="accountArea"></p>
 	<button onclick="connectContract()">CONNECT TO CONTRACT</button> <br>
 	<p id="contractArea"></p>
+	<input type="number" id="propertyIdInput" placeholder="Enter Property ID" />
 	<button onclick="readContract()">GET DATA FROM CONTRACT</button> <br>
 	<p id="dataArea"></p>
 
@@ -364,7 +365,7 @@
 		"type": "function"
 	}
 ]
-            const contractAddress = "0xa9A3b2EA8ee43fD12596c8C8070926f9361FE2e5";
+            const contractAddress = "0x9B4328985cDE930FAEC2efbC8f04759Ce4736205";
             window.web3 = await new Web3(window.ethereum);
             window.contract = await new window.web3.eth.Contract( contractABI, contractAddress); 
             document.getElementById("contractArea").innerHTML = "connected to smart contract";
@@ -372,22 +373,28 @@
 
         
         //3-read data from smart contract
-        const readContract = async () => {
-            const id = 1; //define property ID
-            const propertyDetails = await window.contract.methods.getPropertyDetails(1).call();
+		const readContract = async () => {
+    	// Get property ID from the input box
+   		 const id = document.getElementById("propertyIdInput").value;
 
-            const data = "Property ID: " + propertyDetails._id + "<br>" +
-                "Cost: " + propertyDetails.cost + "<br>" +
-                "Location: " + propertyDetails.location + "<br>" +
-                "Status: " + propertyDetails.status + "<br>" +
-                "Owner Address: " + propertyDetails.o;
+    	const propertyDetails = await window.contract.methods.getPropertyDetails(id).call();
 
-            document.getElementById("dataArea").innerHTML = data;
-        };
+    	const data = "Property ID: " + propertyDetails._id + "<br>" +
+        "Cost: " + propertyDetails.cost + "<br>" +
+        "Location: " + propertyDetails.location + "<br>" +
+        "Status: " + (propertyDetails.status == 0 ? "AVAILABLE/PENDING" : "SOLD") + "<br>" +
+        "Owner Address: " + propertyDetails.o;
+
+    	document.getElementById("dataArea").innerHTML = data;
+};
+
 
 
 
     </script>
+
+
+
 </body>
 </html
 

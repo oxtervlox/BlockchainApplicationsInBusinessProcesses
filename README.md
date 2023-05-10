@@ -7,6 +7,10 @@
 
 ## Requirements For Initial Setup
 - Install [NodeJS](https://nodejs.org/en/)
+- Install and run Ganache
+- Compile and Deploy the contract using Remix
+- Edit the contract address on main.js and seller.js
+- Continue
 
 ## Setting Up
 ### 1. Clone/Download the Repository

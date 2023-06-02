@@ -10,7 +10,9 @@
 - Install and run Ganache
 - Compile and Deploy the contract using Remix
 - Edit the contract address on main.js and seller.js
-- Continue
+- run the website realestate by npm start
+- create the list of the real estate you want to sell on the tap seller
+- it will show all the list on the home page
 
 ## Setting Up
 ### 1. Clone/Download the Repository

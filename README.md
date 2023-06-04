@@ -4,6 +4,9 @@
 
 - Solidity (Writing Smart Contracts & Tests)
 - Javascript (React & Testing)
+- Metamask (blockchain wallet gateway)
+- Ganache (local blockhain network simulator) or you can use any blockchain network (even live network also)
+- NodeJS
 
 ## Requirements For Initial Setup
 - Install [NodeJS](https://nodejs.org/en/)

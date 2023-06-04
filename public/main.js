@@ -193,7 +193,7 @@ window.addEventListener('load', async () => {
             "type": "function"
         }
     ]
-    const contractAddress = "0xdB2697222fEB9A812BD9E2BD2E60099F832639D3"; // Replace with actual contract address
+    const contractAddress = "0xA22d28a1331A6e2Ad53e0B8Dcd5C5288Be1aE495"; // Replace with actual contract address
     const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 // Get property data
